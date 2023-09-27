@@ -102,7 +102,7 @@ const NewCarScreen = ({ history }) => {
           <Form.Group controlId="rentPerday">
             <Form.Label>Rent Per Day</Form.Label>
             <Form.Control
-              type="number"
+              type="text"
               name="rentPerday"
               placeholder="add rent per day"
               value={rentPerDay}
@@ -112,7 +112,7 @@ const NewCarScreen = ({ history }) => {
           <Form.Group controlId="vehicleModel">
             <Form.Label>Vehicle model</Form.Label>
             <Form.Control
-              type="number"
+              type="text"
               name="vehicleModel"
               placeholder="enter vehicle model"
               value={vehicleModel}
@@ -122,7 +122,7 @@ const NewCarScreen = ({ history }) => {
           <Form.Group controlId="vehicleNumber">
             <Form.Label>Vehicle Number</Form.Label>
             <Form.Control
-              type="number"
+              type="text"
               name="vehicleNumber"
               placeholder="enter vehicle number"
               value={vehicleNumber}
@@ -132,7 +132,7 @@ const NewCarScreen = ({ history }) => {
           <Form.Group controlId="seating_capacity_name">
             <Form.Label>Seating Capacity </Form.Label>
             <Form.Control
-              type="text"
+              type="number"
               name="seating_capacity_name"
               placeholder="enter seating capacity "
               value={seatingCapacity}

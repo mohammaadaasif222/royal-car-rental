@@ -6,7 +6,7 @@ const cloudinary = require("cloudinary").v2;
 
 // Create new car
 exports.newCar = catchAsyncErrors(async (request, response) => {
-console.log(request.body)
+
   try {
     let images = [];
     if (typeof request.body.images === "string") {
@@ -26,26 +26,26 @@ console.log(request.body)
         };
       })
     );
-
-    request.body.images = imagesLinks;
     const {
       name,
       price,
       description,
-      vehicle_model,
-      vehicle_number,
-      seating_capacity,
-      rentPerDay,     
+      vehicleModel,
+      vehicleNumber,
+      seatingCapacity,
+      rentPerDay,
     } = request.body;
+    request.body.images = imagesLinks;
+
     const car = await Car.create({
       name,
       price,
       description,
-      vehicle_model,
-      vehicle_number,
-      images,
-      seating_capacity,
-      agency:request.agency._id, 
+      vehicle_model:"783bnm",
+      vehicle_number:vehicleNumber,
+      images:imagesLinks,
+      seating_capacity:seatingCapacity,
+      agency: request.agency._id,
       rentPerDay,
     });
 
@@ -81,8 +81,6 @@ exports.getAllcars = catchAsyncErrors(async (request, response, next) => {
   });
 });
 
-
-
 exports.getAgencyCars = catchAsyncErrors(async (request, response, next) => {
   try {
     const cars = await Car.find({ agency: request.agency._id });
@@ -114,7 +112,7 @@ exports.getSingleCar = catchAsyncErrors(async (request, response, next) => {
       agency: request.agency._id,
       _id: request.params.id,
     });
-  
+
     if (!car) {
       return next(new ErrorHandler("Car cannot found", 404));
     }
@@ -128,12 +126,11 @@ exports.getSingleCar = catchAsyncErrors(async (request, response, next) => {
       message: "Internal Server Error",
     });
   }
-
 });
 exports.getCarDetails = catchAsyncErrors(async (request, response, next) => {
   try {
     const car = await Car.findById(request.params.id);
-  
+
     if (!car) {
       return next(new ErrorHandler("Car cannot found", 404));
     }
@@ -147,17 +144,15 @@ exports.getCarDetails = catchAsyncErrors(async (request, response, next) => {
       message: "Internal Server Error",
     });
   }
-
 });
 
 // Update car
 
 exports.updateCar = catchAsyncErrors(async (request, response, next) => {
-
   try {
     const car = await Car.findOne({
       agency: request.agency._id,
-      _id:request.params.id,
+      _id: request.params.id,
     });
 
     if (!car) {

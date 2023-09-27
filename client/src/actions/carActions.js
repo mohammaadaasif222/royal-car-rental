@@ -18,8 +18,8 @@ import {
   CAR_CREATE_FAILS,
 } from "../constants/carConstant";
 
-export const newCar = (carData) => async (dispatch,getState) => {
-  console.log(carData);
+export const newCar = (carData) => async (dispatch, getState) => {
+  
   try {
     dispatch({ type: CAR_CREATE_REQUEST });
     const {

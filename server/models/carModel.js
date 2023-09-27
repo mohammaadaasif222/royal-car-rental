@@ -7,9 +7,8 @@ const carSchema = new mongoose.Schema({
     maxLength: 100,
   },
   price: {
-    type: Number,
+    type: String,
     required: [true, "Plase enter car name!"],
-    maxLength: 5,
     default: 0,
   },
   description: {
