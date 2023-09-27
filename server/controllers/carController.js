@@ -130,6 +130,25 @@ exports.getSingleCar = catchAsyncErrors(async (request, response, next) => {
   }
 
 });
+exports.getCarDetails = catchAsyncErrors(async (request, response, next) => {
+  try {
+    const car = await Car.findById(request.params.id);
+  
+    if (!car) {
+      return next(new ErrorHandler("Car cannot found", 404));
+    }
+    response.status(200).json({
+      success: true,
+      car,
+    });
+  } catch (error) {
+    response.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+    });
+  }
+
+});
 
 // Update car
 
