@@ -4,45 +4,44 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/shared/Message";
 import Loader from "../components/shared/Loader";
-import { getUserDetails, updateUserProfile } from "../actions/userAction";
+import { getAgencyDetails, updateAgency } from "../actions/agencyAction";
 
 // import { ORDER_CREATE_REQUEST } from "../constants/orderConstant";
 
-const ProfileScreen = ({ location, history }) => {
-  const [name, setName] = useState("");
+const Dashboard = ({ location, history }) => {
+  const [agency_name, setAgencyName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
 
   const dispatch = useDispatch();
-  const userDetails = useSelector((state) => state.userDetails);
-  const { loading, error, user } = userDetails;
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
-  
+  const agencyDetails = useSelector((state) => state.agencyDetails);
+  const { loading, error, agency } = agencyDetails;
+  const agencyLogin = useSelector((state) => state.agencyLogin);
+  const { agencyInfo } = agencyLogin;
 
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
   const { success } = userUpdateProfile;
 
-
   useEffect(() => {
-    if (!userInfo) {
+    if (!agencyInfo) {
       history.push("/login");
-    } else { 
-      if (!user.name) {
-        dispatch(getUserDetails('profile'));
-      } else {
-        setName(user.name);
-        setEmail(user.email);
-      }
+    } else {
+      // if (!agency.agency_name) {
+      //   dispatch(getAgencyDetails("profile"));
+      // } else {
+        setAgencyName(agencyInfo.agency.agency_name);
+        setEmail(agencyInfo.agency.email);
+      // }
     }
-  }, [history, userInfo, user, dispatch]);
+  }, [history, agencyInfo, agency, dispatch]);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    //dispatch
-    dispatch(updateUserProfile({ id: user._id, name, email, password }));
+  
+    // //dispatch
+    dispatch(updateAgency({ id: agencyInfo.agency._id, agency_name, email, password }));
   };
 
   return (
@@ -60,8 +59,8 @@ const ProfileScreen = ({ location, history }) => {
               <Form.Control
                 type="text"
                 placeholder="enter Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={agency_name}
+                onChange={(e) => setAgencyName(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="email">
@@ -156,4 +155,4 @@ const ProfileScreen = ({ location, history }) => {
   );
 };
 
-export default ProfileScreen;
+export default Dashboard;

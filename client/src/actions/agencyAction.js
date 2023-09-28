@@ -114,6 +114,7 @@ export const getAgencyDetails = (id) => async (dispatch, getState) => {
 };
 
 export const updateAgency = (user) => async (dispatch, getState) => {
+  console.log(user)
   try {
     dispatch({
       type: AGENCY_UPDATE_PROFILE_REQUEST,

@@ -96,9 +96,10 @@ exports.getAgencyProfile = asyncHandler(async (req, res) => {
 });
 
 exports.updateAgencyProfile = asyncHandler(async (req, res) => {
+  console.log(req.body)
   const agency = await Agency.findById(req.agency._id);
   if (agency) {
-    agency.name = req.body.name || agency.name;
+    agency.name = req.body.agency_name|| agency.agency_name;
     agency.email = req.body.email || agency.email;
     if (req.body.password) {
       agency.password = req.body.password;

@@ -82,6 +82,7 @@ export const register = (formData) => async (dispatch) => {
 };
 
 export const getUserDetails = (id) => async (dispatch, getState) => {
+  console.log(id)
   try {
     dispatch({
       type: USER_DETAILS_REQUEST,

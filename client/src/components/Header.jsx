@@ -30,8 +30,8 @@ const Header = ({ isFirm }) => {
             <Nav className="ml-auto">
               {agencyInfo ? (
                 <NavDropdown title={agencyInfo.agency.agency_name}>
-                  <LinkContainer to="/profile">
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                  <LinkContainer to="/dashboard">
+                    <NavDropdown.Item>Go To Dashboard</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/newcar">
                     <NavDropdown.Item>Add a Car</NavDropdown.Item>

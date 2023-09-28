@@ -7,7 +7,8 @@ import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import AgencyLoginScreen from "./screens/AgencyLoginScreen";
 import AgencyRegisterScreen from "./screens/AgencyRegisterScreen";
-// import ProfileScreen from "./screens/ProfileScreen";
+import Dashboard from "./screens/Dashboard";
+import ProfileScreen from "./screens/ProfileScreen";
 // import AdminScreen from "./screens/AdminScreen";
 import NewCarScreen from './screens/NewCarScreen'
 
@@ -24,12 +25,13 @@ function App() {
       <main className="my-3">
         <Container>
           {/* <Route path="/admin" component={AdminScreen} /> */}
+          <Route path="/dashboard" component={Dashboard} />
           <Route path="/newcar" component={ NewCarScreen} />
           <Route
             path="/login"
             component={isFirm ? AgencyLoginScreen : LoginScreen}
           />
-          {/* <Route path="/profile" component={ProfileScreen} /> */}
+          <Route path="/profile" component={ProfileScreen} />
           <Route
             path="/register"
             component={isFirm ? AgencyRegisterScreen : RegisterScreen}

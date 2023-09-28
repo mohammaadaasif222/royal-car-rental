@@ -1,7 +1,7 @@
 const experss = require("express");
 const router = experss.Router();
 
-const { protect } = require("../middlewares/authMiddleware");
+const {  checkAgency } = require("../middlewares/authMiddleware");
 const {
   registerAgency,
   loginAgency,
@@ -13,7 +13,7 @@ const {
 router.route("/").post(registerAgency);
 router.route("/login").post(loginAgency);
 router.route("/logout").get(logoutAgency);
-router.route("/profile").get(protect, getAgencyProfile).put(protect, updateAgencyProfile)
+router.route("/profile").get(checkAgency, getAgencyProfile).put(checkAgency, updateAgencyProfile)
 
 
 module.exports = router;
