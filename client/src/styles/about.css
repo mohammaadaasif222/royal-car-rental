@@ -1,0 +1,24 @@
+
+.section__subtitle{
+  color: #f9a826;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.section__title{
+  color: #000d6b;
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .about__page-content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .about__page-img {
+    display: none;
+  }
+}
+

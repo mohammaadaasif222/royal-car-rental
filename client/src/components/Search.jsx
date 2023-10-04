@@ -13,7 +13,7 @@ const Search = ({ history }) => {
     }
   };
   return (
-    <Form className="d-flex " style={{ width: "60%" }} onSubmit={formHandler}>
+    <Form className="d-flex " style={{ width: "100%" ,background:'inherit', outline:'none', border:'none'}} onSubmit={formHandler}>
       <Form.Control
         type="search"
         placeholder="Search..."
@@ -21,7 +21,7 @@ const Search = ({ history }) => {
         aria-label="Search"
         onChange={(e) => setKeyword(e.target.value)}
       />
-      <button className="btn btn-primary">Search</button>
+      <button className="btn" ><i className="ri-search-line " style={{color:'#707070'}} ></i></button>
     </Form>
   );
 };

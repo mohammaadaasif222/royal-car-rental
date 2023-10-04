@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&family=Source+Code+Pro:ital,wght@0,300;0,500;0,700;1,600&family=Work+Sans:wght@600&display=swap');
+
+*{
+    font-family: "Source Sans Pro", sans-serif
+}
+.section__description{
+    color: #7c8a97 !important;
+    font-size: 0.8rem !important;
+    line-height: 30px !important;
+    letter-spacing: 1px;
+}
+.custom_dropDown{
+    color:#000d6b !important
+}
+.active{
+    background-color: #000d6b !important;
+}
+.hero-slider-slide-background {
+    opacity: 0.7;
+    background-color: rgba(0, 0, 0, 0.041) !important;
+}
