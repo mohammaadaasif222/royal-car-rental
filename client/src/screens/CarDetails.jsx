@@ -99,7 +99,7 @@ const CarDetails = ({ history, match }) => {
                 >
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-roadster-line"
+                      className="ri-roadster-line"
                       style={{ color: "#f9a826", paddingRight: "5px" }}
                     ></i>{" "}
                     {car.vehicle_model}
@@ -107,7 +107,7 @@ const CarDetails = ({ history, match }) => {
 
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-settings-2-line"
+                      className="ri-settings-2-line"
                       style={{ color: "#f9a826", paddingRight: "5px" }}
                     ></i>{" "}
                     Automatic
@@ -115,7 +115,7 @@ const CarDetails = ({ history, match }) => {
 
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-timer-flash-line"
+                      className="ri-timer-flash-line"
                       style={{ color: "#f9a826", paddingRight: "5px" }}
                     ></i>{" "}
                     480kmpl
@@ -128,7 +128,7 @@ const CarDetails = ({ history, match }) => {
                 >
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-map-pin-line"
+                      className="ri-map-pin-line"
                       style={{ color: "#f9a826", paddingRight: "5px" }}
                     ></i>{" "}
                     GPS Navigation
@@ -136,7 +136,7 @@ const CarDetails = ({ history, match }) => {
 
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-wheelchair-line"
+                      className="ri-wheelchair-line"
                       style={{ color: "#f9a826", paddingRight: "5px" }}
                     ></i>{" "}
                     Heated seats
@@ -144,7 +144,7 @@ const CarDetails = ({ history, match }) => {
 
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-building-2-line"
+                      className="ri-building-2-line"
                       style={{ color: "#f9a826", paddingRight: "5px" }}
                     ></i>{" "}
                     {car.vehicle_model}
