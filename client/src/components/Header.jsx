@@ -67,6 +67,7 @@ const Header = ({ isFirm }) => {
                       </LinkContainer>
                       <NavDropdown.Item
                         onClick={() => dispatch(agencyLogout())}
+                        className="custom_dropDown"
                       >
                         Logout
                       </NavDropdown.Item>
@@ -76,7 +77,7 @@ const Header = ({ isFirm }) => {
                       <LinkContainer to="/profile" className="custom_dropDown">
                         <NavDropdown.Item>Profile</NavDropdown.Item>
                       </LinkContainer>
-                      <NavDropdown.Item onClick={() => dispatch(logout())}>
+                      <NavDropdown.Item onClick={() => dispatch(logout())} className="custom_dropDown">
                         Logout
                       </NavDropdown.Item>
                     </NavDropdown>

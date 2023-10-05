@@ -56,7 +56,7 @@ const HomeScreen = ({ match }) => {
       <section>
         <Container>
           <Row>
-            <Col lg="12" className="text-center mb-5">
+            <Col lg="12" className="text-center mb-5" id="cars">
               <h6 className="section__subtitle">Come with</h6>
               <h2 className="section__title">Hot Offers</h2>
             </Col>
