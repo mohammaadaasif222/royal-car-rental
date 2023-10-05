@@ -1,41 +1,103 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // Define the car booking schema
 const carBookingSchema = new mongoose.Schema({
-  customerName: {
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'User',
-    required: true
-  },
-  car: {
+  customer: {
     type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
     required: true,
-    ref: "Car",
   },
-  agency: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "Agency",
+  bookingItem: {
+    name: {
+      type: String,
+      required: true, 
+    },
+    image: [
+      {
+        public_id: {
+          type: String,
+          required: true,
+        },
+        url: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
+    rent: {
+      type: Number,
+      required: true,
+    },
+    car: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Car",
+    },
+    agency: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Agency",
+    },
   },
-  carModel: {
+  fromAddress: {
     type: String,
-    required: true
+    required: true,
   },
-  pickupDate: {
-    type: Date,
-    required: true
+  toAddress: {
+    type: String,
+    required: true,
   },
-  returnDate: {
+  pickDate:{
     type: Date,
-    required: true
+    required: true,
+  },
+  returnDate:{
+    type: Date,
+    required: true,
+  },
+  paymentMethod: {
+    type: String,
+    // required: true,
+  },
+  paymentResult: {
+    id: {
+      type: String,
+    },
+    status: {
+      type: String,
+    },
+    upload_status: {
+      type: String,
+    },
+    email_address: {
+
+      type: String,
+    },
+  },
+  taxPrice: {
+    type: Number,
+    required: true,
+    defualt: 0.0,
+  },
+  totalPrice: {
+    type: Number,
+    required: true,
+    default: 0.0,
+  },
+  isPaid: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  paidAt: {
+    type: Date,
   },
   isApproved: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
+const Booking = mongoose.model("CarBooking", carBookingSchema);
 
-const CarBooking = mongoose.model('CarBooking', carBookingSchema);
-
-module.exports = CarBooking;
+module.exports = Booking;

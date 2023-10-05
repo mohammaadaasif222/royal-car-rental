@@ -2,6 +2,7 @@ const experss = require("express");
 const carRoutes = require("./routes/carRoutes");
 const usersRoutes = require("./routes/authRoutes");
 const agencyRoutes = require("./routes/agencyRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
@@ -34,6 +35,7 @@ app.get('/', (req, res) =>{
 // Routes
 app.use("/", carRoutes);
 app.use("/users", usersRoutes);
+app.use("/booking", bookingRoutes);
 app.use("/agency", agencyRoutes);
 
 // Middle wares

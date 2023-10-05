@@ -6,12 +6,13 @@ const asyncHandler = require("express-async-handler");
 const cloudinary = require('cloudinary').v2
 //  Register new agency
 exports.registerAgency = catchAsyncErrors(async (req, res, next) => {
-   
-  const result = await cloudinary.uploader.upload(req.body.picture,{
-    folder:'profiles',
-    width:150,
-    crop:'scale'
-  })
+  console.log(req.body)
+  
+  const  result = await cloudinary.uploader.upload(req.body.picture,{
+      folder:'profiles',
+      width:150,
+      crop:'scale'
+    }) 
   
   const { agency_name, email, password } = req.body;
   
@@ -20,7 +21,7 @@ exports.registerAgency = catchAsyncErrors(async (req, res, next) => {
       agency_name,
       email,
       password,
-      picture:result.secure_url
+      picture: result.secure_url 
     });
     sendToken(agency, 201, res);
   } catch (error) {

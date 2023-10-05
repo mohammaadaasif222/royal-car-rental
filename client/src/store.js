@@ -19,7 +19,9 @@ import {
   agencyDetailsReducer,
   agencyUpdateProfileReducer,
 } from "./reducers/agencyReducers";
-
+import {
+bookingCreateReducer
+} from "./reducers/bookingReducers"
 
 
 
@@ -38,6 +40,7 @@ const reducer = combineReducers({
   agencyRegister: agencyRegisterReducer,
   agencyDetails: agencyDetailsReducer,
   agencyUpdateProfile: agencyUpdateProfileReducer,
+  bookingCraete: bookingCreateReducer,
 });
 const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))

@@ -6,6 +6,7 @@ const asyncHandler = require("express-async-handler");
 const cloudinary = require('cloudinary').v2
 //  Register new user
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
+   
 
   const result = await cloudinary.uploader.upload(req.body.avatar,{
     folder:'avatars',

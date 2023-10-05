@@ -51,6 +51,7 @@ const HomeScreen = ({ match }) => {
           </Container>
         </div>
       </section>
+      <AboutSection />
 
       <section>
         <Container>

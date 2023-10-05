@@ -10,7 +10,7 @@ const AboutSection = ({ aboutClass }) => {
       style={
         aboutClass === "aboutPage"
           ? { marginTop: "0px" }
-          : { marginTop: "280px" }
+          : { marginTop: "140px", marginBottom:"100px" }
       }
     >
       <Container>
